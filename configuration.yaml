@@ -1,0 +1,21 @@
+apiVersion: api/v1
+kind: Deployment
+metadata:
+  labels:
+     name: kubeNginx
+        app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchtLabel:
+      labels:
+        app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    containers:
+    - name: nginx
+      image: nginx:1-bullseye
+      ports:
+      - containerPort: 8080
