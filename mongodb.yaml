@@ -15,8 +15,8 @@ spec:
         app: mongodb
     spec:
       containers:
-      - name: nongodb
-        image: mongo
+      - name: mongodb
+        image: mongo:4.2.24
         ports:
         - containerPort: 27017
         env:
